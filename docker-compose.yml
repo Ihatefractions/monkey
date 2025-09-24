@@ -1,0 +1,19 @@
+version: '3.9'
+services:
+  server:
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    environment:
+      - NODE_ENV=production
+      - PORT=4000
+      - CLIENT_ORIGIN=${CLIENT_ORIGIN:-http://localhost:5173}
+      - JWT_SECRET=${JWT_SECRET:-change_me}
+      - DATABASE_PATH=/data/chat.db
+    ports:
+      - "4000:4000"
+    volumes:
+      - server_data:/data
+volumes:
+  server_data: {}
+
