@@ -1,0 +1,13 @@
+{
+  "$schema": "https://railway.app/railway.schema.json",
+  "name": "chat-platform",
+  "services": {
+    "server": {
+      "path": "server"
+    },
+    "client": {
+      "path": "client"
+    }
+  }
+}
+
